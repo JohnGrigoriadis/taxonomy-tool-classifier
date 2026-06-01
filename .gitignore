@@ -1,0 +1,21 @@
+# Environment
+.env
+.venv/
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+dist/
+build/
+
+# Data (large / raw downloads)
+data/raw/
+data/processed/
+
+# Runtime outputs
+outputs/
+
+# IDE
+.vscode/
+.idea/
+*.DS_Store

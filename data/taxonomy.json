@@ -1,0 +1,317 @@
+{
+  "taxonomy_version": "1.0",
+  "levels": ["domain", "capability", "technique"],
+  "nodes": [
+    {
+      "id": "L1-001",
+      "level": 1,
+      "label": "Language & Text",
+      "description": "Tools whose primary modality is natural language.",
+      "children": [
+        {
+          "id": "L2-001",
+          "level": 2,
+          "label": "Generation",
+          "description": "Tools that produce new text (chat, writing, code, summarization).",
+          "children": [
+            { "id": "L3-001", "level": 3, "label": "Conversational AI" },
+            { "id": "L3-002", "level": 3, "label": "Long-form Writing Assistant" },
+            { "id": "L3-003", "level": 3, "label": "Code Generation" },
+            { "id": "L3-004", "level": 3, "label": "Summarization & Compression" }
+          ]
+        },
+        {
+          "id": "L2-002",
+          "level": 2,
+          "label": "Analysis & Classification",
+          "description": "Tools that analyse, label, or extract structure from existing text.",
+          "children": [
+            { "id": "L3-005", "level": 3, "label": "Sentiment & Opinion Mining" },
+            { "id": "L3-006", "level": 3, "label": "Information Extraction" },
+            { "id": "L3-007", "level": 3, "label": "Content Moderation" }
+          ]
+        },
+        {
+          "id": "L2-003",
+          "level": 2,
+          "label": "Translation & Localisation",
+          "description": "Tools focused on cross-lingual transfer and cultural adaptation.",
+          "children": [
+            { "id": "L3-008", "level": 3, "label": "Machine Translation" },
+            { "id": "L3-009", "level": 3, "label": "Localisation & Adaptation" }
+          ]
+        },
+        {
+          "id": "L2-004",
+          "level": 2,
+          "label": "Search & Retrieval",
+          "description": "Tools for semantic search, document retrieval, and Q&A over corpora.",
+          "children": [
+            { "id": "L3-010", "level": 3, "label": "Semantic Search" },
+            { "id": "L3-011", "level": 3, "label": "Document Q&A / RAG" },
+            { "id": "L3-012", "level": 3, "label": "Knowledge Graph Query" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "L1-002",
+      "level": 1,
+      "label": "Vision & Image",
+      "description": "Tools whose primary modality is visual (still images).",
+      "children": [
+        {
+          "id": "L2-005",
+          "level": 2,
+          "label": "Image Generation",
+          "description": "Tools that synthesise new images from prompts or references.",
+          "children": [
+            { "id": "L3-013", "level": 3, "label": "Text-to-Image Synthesis" },
+            { "id": "L3-014", "level": 3, "label": "Image-to-Image Editing" },
+            { "id": "L3-015", "level": 3, "label": "Inpainting & Outpainting" }
+          ]
+        },
+        {
+          "id": "L2-006",
+          "level": 2,
+          "label": "Image Understanding",
+          "description": "Tools that interpret, describe, or extract information from images.",
+          "children": [
+            { "id": "L3-016", "level": 3, "label": "Image Captioning" },
+            { "id": "L3-017", "level": 3, "label": "Object Detection & Segmentation" },
+            { "id": "L3-018", "level": 3, "label": "Visual Question Answering" }
+          ]
+        },
+        {
+          "id": "L2-007",
+          "level": 2,
+          "label": "Image Enhancement",
+          "description": "Tools that improve, restore, or transform image quality.",
+          "children": [
+            { "id": "L3-019", "level": 3, "label": "Super-Resolution & Upscaling" },
+            { "id": "L3-020", "level": 3, "label": "Background Removal" },
+            { "id": "L3-021", "level": 3, "label": "Style Transfer" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "L1-003",
+      "level": 1,
+      "label": "Audio & Speech",
+      "description": "Tools whose primary modality is audio or spoken language.",
+      "children": [
+        {
+          "id": "L2-008",
+          "level": 2,
+          "label": "Speech Processing",
+          "description": "Tools for recognising, synthesising, or transforming human speech.",
+          "children": [
+            { "id": "L3-022", "level": 3, "label": "Speech-to-Text (ASR)" },
+            { "id": "L3-023", "level": 3, "label": "Text-to-Speech (TTS)" },
+            { "id": "L3-024", "level": 3, "label": "Voice Cloning & Conversion" }
+          ]
+        },
+        {
+          "id": "L2-009",
+          "level": 2,
+          "label": "Music & Sound Generation",
+          "description": "Tools that compose, generate, or edit music and general audio.",
+          "children": [
+            { "id": "L3-025", "level": 3, "label": "Music Composition" },
+            { "id": "L3-026", "level": 3, "label": "Sound Effects Generation" },
+            { "id": "L3-027", "level": 3, "label": "Audio Enhancement & Separation" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "L1-004",
+      "level": 1,
+      "label": "Video & Animation",
+      "description": "Tools whose primary modality is video or motion graphics.",
+      "children": [
+        {
+          "id": "L2-010",
+          "level": 2,
+          "label": "Video Generation",
+          "description": "Tools that create video from text, images, or other signals.",
+          "children": [
+            { "id": "L3-028", "level": 3, "label": "Text-to-Video Synthesis" },
+            { "id": "L3-029", "level": 3, "label": "Image-to-Video Animation" }
+          ]
+        },
+        {
+          "id": "L2-011",
+          "level": 2,
+          "label": "Video Editing & Enhancement",
+          "description": "Tools for automated editing, dubbing, captioning, or upscaling of video.",
+          "children": [
+            { "id": "L3-030", "level": 3, "label": "Automated Video Editing" },
+            { "id": "L3-031", "level": 3, "label": "AI Dubbing & Lip Sync" },
+            { "id": "L3-032", "level": 3, "label": "Video Captioning & Transcription" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "L1-005",
+      "level": 1,
+      "label": "Multimodal",
+      "description": "Tools that combine two or more modalities as a core feature.",
+      "children": [
+        {
+          "id": "L2-012",
+          "level": 2,
+          "label": "Cross-Modal Understanding",
+          "description": "Tools that jointly reason over multiple input modalities.",
+          "children": [
+            { "id": "L3-033", "level": 3, "label": "Document Understanding (OCR + NLP)" },
+            { "id": "L3-034", "level": 3, "label": "Chart & Diagram Interpretation" },
+            { "id": "L3-035", "level": 3, "label": "Multimodal Conversational AI" }
+          ]
+        },
+        {
+          "id": "L2-013",
+          "level": 2,
+          "label": "Cross-Modal Generation",
+          "description": "Tools that generate output in a different modality from the input.",
+          "children": [
+            { "id": "L3-036", "level": 3, "label": "Audio-to-Text + Summary" },
+            { "id": "L3-037", "level": 3, "label": "Slide & Presentation Generation" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "L1-006",
+      "level": 1,
+      "label": "Data & Analytics",
+      "description": "Tools focused on structured data, forecasting, and analytical reasoning.",
+      "children": [
+        {
+          "id": "L2-014",
+          "level": 2,
+          "label": "Data Processing & Transformation",
+          "description": "Tools that clean, transform, or enrich structured datasets.",
+          "children": [
+            { "id": "L3-038", "level": 3, "label": "Data Cleaning & Normalisation" },
+            { "id": "L3-039", "level": 3, "label": "Synthetic Data Generation" },
+            { "id": "L3-040", "level": 3, "label": "ETL & Pipeline Automation" }
+          ]
+        },
+        {
+          "id": "L2-015",
+          "level": 2,
+          "label": "Predictive Analytics",
+          "description": "Tools that forecast outcomes or detect anomalies in data.",
+          "children": [
+            { "id": "L3-041", "level": 3, "label": "Time-Series Forecasting" },
+            { "id": "L3-042", "level": 3, "label": "Anomaly Detection" },
+            { "id": "L3-043", "level": 3, "label": "Recommendation Systems" }
+          ]
+        },
+        {
+          "id": "L2-016",
+          "level": 2,
+          "label": "Natural Language to Data",
+          "description": "Tools that translate natural language queries into structured queries or insights.",
+          "children": [
+            { "id": "L3-044", "level": 3, "label": "Text-to-SQL" },
+            { "id": "L3-045", "level": 3, "label": "BI Copilot & Insight Narration" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "L1-007",
+      "level": 1,
+      "label": "Agents & Automation",
+      "description": "Tools that autonomously plan, act, and complete multi-step tasks.",
+      "children": [
+        {
+          "id": "L2-017",
+          "level": 2,
+          "label": "Task Automation",
+          "description": "Tools that automate repetitive workflows within a single application.",
+          "children": [
+            { "id": "L3-046", "level": 3, "label": "Browser & Web Automation" },
+            { "id": "L3-047", "level": 3, "label": "Desktop & OS Automation" },
+            { "id": "L3-048", "level": 3, "label": "Email & Calendar Automation" }
+          ]
+        },
+        {
+          "id": "L2-018",
+          "level": 2,
+          "label": "Autonomous Agents",
+          "description": "Tools that operate as LLM-driven agents with tool use and long-horizon planning.",
+          "children": [
+            { "id": "L3-049", "level": 3, "label": "General-Purpose AI Agent" },
+            { "id": "L3-050", "level": 3, "label": "Research & Web-Browsing Agent" },
+            { "id": "L3-051", "level": 3, "label": "Coding Agent" }
+          ]
+        },
+        {
+          "id": "L2-019",
+          "level": 2,
+          "label": "Workflow Orchestration",
+          "description": "Tools for building, chaining, and managing multi-agent or multi-step pipelines.",
+          "children": [
+            { "id": "L3-052", "level": 3, "label": "No-Code AI Workflow Builder" },
+            { "id": "L3-053", "level": 3, "label": "Multi-Agent Orchestration Framework" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "L1-008",
+      "level": 1,
+      "label": "Developer Infrastructure",
+      "description": "Tools for building, deploying, evaluating, and monitoring AI systems.",
+      "children": [
+        {
+          "id": "L2-020",
+          "level": 2,
+          "label": "Model Serving & Deployment",
+          "description": "Tools for hosting and serving ML models in production.",
+          "children": [
+            { "id": "L3-054", "level": 3, "label": "Inference API / Model Hosting" },
+            { "id": "L3-055", "level": 3, "label": "Edge & On-Device Deployment" }
+          ]
+        },
+        {
+          "id": "L2-021",
+          "level": 2,
+          "label": "LLM Ops & Evaluation",
+          "description": "Tools for prompt management, evaluation, observability, and guardrails.",
+          "children": [
+            { "id": "L3-056", "level": 3, "label": "Prompt Management & Versioning" },
+            { "id": "L3-057", "level": 3, "label": "LLM Evaluation & Benchmarking" },
+            { "id": "L3-058", "level": 3, "label": "Guardrails & Safety Filtering" }
+          ]
+        },
+        {
+          "id": "L2-022",
+          "level": 2,
+          "label": "Fine-Tuning & Training",
+          "description": "Tools for adapting pre-trained models to custom tasks or datasets.",
+          "children": [
+            { "id": "L3-059", "level": 3, "label": "Full Fine-Tuning Platform" },
+            { "id": "L3-060", "level": 3, "label": "PEFT / LoRA Tooling" },
+            { "id": "L3-061", "level": 3, "label": "Dataset Curation & Labelling" }
+          ]
+        },
+        {
+          "id": "L2-023",
+          "level": 2,
+          "label": "Vector & Embedding Infrastructure",
+          "description": "Tools that store, index, and query vector embeddings at scale.",
+          "children": [
+            { "id": "L3-062", "level": 3, "label": "Vector Database" },
+            { "id": "L3-063", "level": 3, "label": "Embedding Service" }
+          ]
+        }
+      ]
+    }
+  ]
+}
