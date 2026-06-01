@@ -1,19 +1,19 @@
 # AI Tool Taxonomy Classifier
 
-> An LLM-powered pipeline that classifies ~800 AI tools into a self-designed 3-level hierarchical taxonomy, runs four models in parallel, and evaluates cross-model consistency — built to demonstrate taxonomy design thinking, prompt engineering, structured outputs, and production-quality Python pipelines.
+> An LLM-powered pipeline that classifies ~800 AI tools into a self-designed 3-level hierarchical taxonomy, runs four models in parallel, and evaluates cross-model consistency - built to demonstrate taxonomy design thinking, prompt engineering, structured outputs, and production-quality Python pipelines.
 
 ---
 
 ## Motivation
 
-The AI tool landscape is fragmented and growing fast. Existing directories (ProductHunt, RankmyAI, Futurepedia) use flat or shallow category systems that collapse meaningfully different tools into the same bucket — "Productivity" can describe a code-gen agent, a scheduling chatbot, and a document summariser.
+The AI tool landscape is fragmented and growing fast. Existing directories (ProductHunt, RankmyAI, Futurepedia) use flat or shallow category systems that collapse meaningfully different tools into the same bucket - "Productivity" can describe a code-gen agent, a scheduling chatbot, and a document summariser.
 
 A **principled hierarchical taxonomy** solves three things:
-1. **Discovery** — users navigate by domain, then capability, then technique.
-2. **Comparison** — tools at the same L3 node are genuinely comparable.
-3. **Trend detection** — you can watch whole branches of the tree grow or shrink.
+1. **Discovery** - users navigate by domain, then capability, then technique.
+2. **Comparison** - tools at the same L3 node are genuinely comparable.
+3. **Trend detection** - you can watch whole branches of the tree grow or shrink.
 
-The hard part is that many AI tools span multiple modalities or use-cases. This project treats ambiguity as a first-class signal — models are asked to flag it explicitly, and disagreement between models is measured rather than hidden.
+The hard part is that many AI tools span multiple modalities or use-cases. This project treats ambiguity as a first-class signal - models are asked to flag it explicitly, and disagreement between models is measured rather than hidden.
 
 ---
 
@@ -25,7 +25,7 @@ The taxonomy has **3 levels** (63 nodes total):
 |---|---|---|
 | **L1** | Domain | Primary modality / problem space |
 | **L2** | Capability | What the tool *does* within that domain |
-| **L3** | Technique | *How* it does it — the most specific, comparable unit |
+| **L3** | Technique | *How* it does it - the most specific, comparable unit |
 
 ### L1 Domains
 
@@ -41,7 +41,7 @@ L1-004  Video & Animation        L1-008  Developer Infrastructure
 | Decision | Rationale |
 |---|---|
 | **"Multimodal" is its own L1** | Tools like GPT-4V or Gemini are architecturally distinct from unimodal tools; lumping them under "Language" loses signal. |
-| **"Developer Infrastructure" as a peer domain** | Vector DBs, eval platforms, and fine-tuning services are AI tools *for AI builders*, not for end-users — they deserve their own branch. |
+| **"Developer Infrastructure" as a peer domain** | Vector DBs, eval platforms, and fine-tuning services are AI tools *for AI builders*, not for end-users - they deserve their own branch. |
 | **L3 by technique, not audience** | Audience (B2B vs consumer) changes; the underlying technique doesn't. L3 nodes stay stable as tools pivot. |
 | **Ambiguity is modelled explicitly** | A `ambiguous` flag + `alternative_l2` field captures borderline cases rather than forcing a false single classification. |
 
@@ -84,7 +84,7 @@ main.py                        ← one-command pipeline runner
 
 ```
 HuggingFace datasets ──┐
-                        ├── download_data.py ──► tools.jsonl
+                       ├── download_data.py ──► tools.jsonl
 RankmyAI scrape ───────┘
 
 tools.jsonl ──► classify.py ──► claude_results.jsonl
@@ -146,10 +146,10 @@ class ClassificationResult(BaseModel):
 
 ### Visualisations
 
-- **Confidence distribution** — density histogram per model; reveals calibration differences.
-- **Agreement rate by L1 domain** — bar chart showing which domains are easiest/hardest to agree on.
-- **L2 confusion heatmap** — where do two models diverge most? Highlights structurally ambiguous categories.
-- **Confidence vs agreement scatter** — are high-confidence predictions actually right?
+- **Confidence distribution** - density histogram per model; reveals calibration differences.
+- **Agreement rate by L1 domain** - bar chart showing which domains are easiest/hardest to agree on.
+- **L2 confusion heatmap** - where do two models diverge most? Highlights structurally ambiguous categories.
+- **Confidence vs agreement scatter** - are high-confidence predictions actually right?
 
 ---
 
@@ -177,12 +177,12 @@ Fetches ~800–1000 tools from HuggingFace datasets and RankmyAI, deduplicates, 
 uv run python scripts/build_taxonomy.py
 ```
 
-Calls Claude to propose L3 leaf nodes. **Review and edit `data/taxonomy.json` manually before continuing** — this is the human-in-the-loop step.
+Calls Claude to propose L3 leaf nodes. **Review and edit `data/taxonomy.json` manually before continuing** - this is the human-in-the-loop step.
 
 ### 4. Run classification
 
 ```bash
-# Smoke test — 20 tools, all models
+# Smoke test - 20 tools, all models
 uv run python scripts/run_classification.py --smoke-test
 
 # Full run
@@ -239,17 +239,17 @@ The golden set is saved to `data/processed/golden_set.jsonl` and used to compute
 
 Based on the taxonomy structure, we expect:
 
-- **High L1 agreement (~90%)** — domain boundaries are usually clear from tool descriptions.
-- **Lower L3 agreement (~60–70%)** — technique-level distinctions are genuinely harder, especially at the boundary between *Agents & Automation* and *Developer Infrastructure*.
-- **Gemini and Claude will agree most** — both trained on similar corpora and instruction-tuned for structured output.
-- **Ambiguity concentrated in Multimodal and Agents** — these categories cut across natural boundaries.
+- **High L1 agreement (~90%)** - domain boundaries are usually clear from tool descriptions.
+- **Lower L3 agreement (~60–70%)** - technique-level distinctions are genuinely harder, especially at the boundary between *Agents & Automation* and *Developer Infrastructure*.
+- **Gemini and Claude will agree most** - both trained on similar corpora and instruction-tuned for structured output.
+- **Ambiguity concentrated in Multimodal and Agents** - these categories cut across natural boundaries.
 
 ---
 
 ## What I'd Do Next
 
-- **Active learning loop** — route low-confidence items to a human reviewer; use corrections to refine the taxonomy iteratively.
-- **Embedding-based fallback** — for tools with very short descriptions, use semantic similarity to the L3 centroid as a tie-breaker.
-- **Fine-tune a small classifier** — once the golden set reaches ~500 examples, fine-tune a `distilbert` or `ModernBERT` model as a fast, cheap local classifier.
-- **Taxonomy versioning** — track taxonomy changes in git and flag tools whose classification changes across versions.
-- **Confidence calibration** — use Platt scaling or temperature tuning to align model-reported confidence with actual accuracy.
+- **Active learning loop** - route low-confidence items to a human reviewer; use corrections to refine the taxonomy iteratively.
+- **Embedding-based fallback** - for tools with very short descriptions, use semantic similarity to the L3 centroid as a tie-breaker.
+- **Fine-tune a small classifier** - once the golden set reaches ~500 examples, fine-tune a `distilbert` or `ModernBERT` model as a fast, cheap local classifier.
+- **Taxonomy versioning** - track taxonomy changes in git and flag tools whose classification changes across versions.
+- **Confidence calibration** - use Platt scaling or temperature tuning to align model-reported confidence with actual accuracy.
